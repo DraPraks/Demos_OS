@@ -20,19 +20,20 @@ echo "";
 echo "========= ========= ========= ========= ========= ========= ========= ========="
 
 function INFO() {
-   if [ -z "$1" ]
+   if [ -z "$1" ] # if no argument is given, -z means "is zero length"
    then
       printf "Script Name: $SCRIPT\n"
-   else if [ -e "$1" ]
+   else if [ -e "$1" ] # if argument is given and the file exists, -e means "file exists"
       then
-         RESULT=$(grep "$PREFIX" "$1")
-         if [ ! -z "$RESULT" ]
+         RESULT=$(grep "$PREFIX" "$1") # grep searches for the pattern in the file, it takes two arguments: pattern and file, returns the matching line
+         if [ ! -z "$RESULT" ] # if RESULT is not empty, -z means "is zero length"
          then
             printf "[$SCRIPT] $RESULT\n"
          fi
       fi
    fi
 }
+
 PREFIX="^# FileName: "
 SCRIPT="$0"
 INFO "$1"

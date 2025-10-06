@@ -16,30 +16,38 @@
 void main (void) {
    short             sii    = 1;
    unsigned short    usii   = sii * -1;
-   printf("short     %hd |||| unsigned short     %hu\n", sii, usii);
+   printf("short     %hd |||| unsigned short     %hu\n", sii, usii); // %hd = short, %hu = unsigned short
+   printf("\n");
 
    int               ii     = 1;
    unsigned          uii    = ii * -1;
-   printf("int       %d |||| unsigned           %u\n", ii, uii);
+   printf("int       %d |||| unsigned           %u\n", ii, uii); // %d = integer, %u = unsigned integer
+   printf("\n");
 
    long              lii    = 1;
    unsigned long     ulii   = lii * -1;
    printf("long      %ld |||| unsigned long      %lu (%#lX)\n", lii, ulii, ulii);
+   printf("\n");
 
    long long         llii   = 1;
    unsigned long long ullii = llii * -1;
    printf("long long %lld |||| unsigned long long %llu (%#llX)\n", llii, ullii, ullii);
+   printf("\n");
 
    float            ff    = 123456789.12345678;
    printf("float       %f (%e)\n", ff, ff);
+   printf("\n");
    double            dff  = 123456789.12345678;
    printf("double      %lf (%le)\n", dff, dff);
+   printf("\n");
    long double       ldff = 123456789.12345678;
    printf("long double %Lf (%Le)\n", ldff, ldff);
+   printf("\n");
 
    char        ch='A';
    unsigned char uch = (unsigned char) -191;
    printf("char %c (%d) |||| unsigned char       %c (%u)\n", ch, ch, uch, uch);
+   printf("\n");
 
 #define STRING "123456789ABCDEF\n"
 
@@ -50,4 +58,3 @@ void main (void) {
    printf("dd[]= %c%c%c ... %c\n", dd[0], 
            dd[1], dd[2], dd[size-3]);
 }
-

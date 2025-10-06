@@ -21,11 +21,28 @@ LINE3="TESTING REGEX using awk"
 LINE4="= = END"
 
 echo $LINE1
-echo $LINE2 | awk '/regex/{print $1}' 
-echo $LINE3 | awk '/regex/{print $1}' 
-echo $LINE2 | tr [A-Z] [a-z] | awk '/regex/{print $1}' 
-echo $LINE3 | tr [A-Z] [a-z] | awk '/regex/{print $1}' 
+
+echo ""
+echo "Trying to match 'regex' from LINE2 and LINE3 using awk"
+echo $LINE2 | awk '/regex/{print $1}' # try to match 'regex' from LINE2
+
+echo ""
+echo "Trying to match 'regex' from LINE3 using awk"
+echo $LINE3 | awk '/regex/{print $1}' # try to match 'regex' from LINE3
+
+echo ""
+echo "Trying to match 'regex' from LINE2 using tr to convert to lowercase"
+echo $LINE2 | tr [A-Z] [a-z] | awk '/regex/{print $1}' # try to match 'regex' from LINE2 (lowercase)
+
+echo "" 
+echo "Trying to match 'regex' from LINE3 using tr to convert to lowercase"
+echo $LINE3 | tr [A-Z] [a-z] | awk '/regex/{print $1}' # try to match 'regex' from LINE3 (lowercase)
+
+echo ""
 echo $LINE4
+
+# Conclusion: awk is case-sensitive. To perform a case-insensitive match, convert the input to a common case (e.g., lowercase) using tr before passing it to awk.
+# tr can also be used to convert to uppercase using tr [a-z] [A-Z]
 
 exit 0
 

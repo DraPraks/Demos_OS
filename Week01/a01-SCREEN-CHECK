@@ -20,7 +20,7 @@ echo "RESIZE the screen if this following message does not fit in \"80 x 23\""
 echo ""; echo "*** HIT ENTER KEY ***";
 [ "$1" = "$XX" ] || (read YY)
 
-cat - << ZCZCNNNN1
+cat - << JAWAJAWAJAWAJAWA
 (ROW 01) START START START START START START START START START START START START
 123456789|123456789|123456789|123456789|123456789|123456789|123456789|123456789|
         10        20        30        40        50        60        70        80
@@ -44,9 +44,6 @@ XXXXX                 SCREEN TEST FOR 80 columns x 23 rows                 XXXXX
         10        20        30        40        50        60        70        80
 123456789|123456789|123456789|123456789|123456789|123456789|123456789|123456789|
 (ROW 23) END END END END END END END END END END END END END END END END END END
-ZCZCNNNN1
+JAWAJAWAJAWAJAWA
 
 exit 
-
-
-

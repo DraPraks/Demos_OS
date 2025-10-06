@@ -16,18 +16,18 @@
 void main (void) {
    int   ii   = 74;             // Integer
 
-   printf("(%%d)    ii = (%d)\n",    ii);
-   printf("(%%5d)   ii = (%5d)\n",   ii);
-   printf("(%%1d)   ii = (%1d)\n",   ii);
-   printf("(%%-5d)  ii = (%-5d)\n",  ii);
-   printf("(%%5.5d) ii = (%5.5d)\n", ii);
-   printf("(%%5.3d) ii = (%5.3d)\n", ii);
-   printf("(%%c)    ii = %c\n",      ii);
-   printf("(%%x)    ii = %x\n",      ii);
-   printf("(%%#x)   ii = %#x\n",     ii);
-   printf("(%%X)    ii = %X\n",      ii);
-   printf("(%%#X)   ii = %#X\n",     ii);
-   printf("(%%o)    ii = %o\n",      ii);
-   printf("(%%#o)   ii = %#o\n",     ii);
+   printf("(%%d)    ii = (%d)\n",    ii); // %d = decimal integer, %% means print a single %
+   printf("(%%5d)   ii = (%5d)\n",   ii); // checks if ii is > 5, if less: pad with spaces on the left until 5 length
+   printf("(%%1d)   ii = (%1d)\n",   ii); // checks if ii is > 1, if less: pad with spaces on the left until 1 length
+   printf("(%%-5d)  ii = (%-5d)\n",  ii); // checks if ii is > 5, if less: pad with spaces on the right until 5 length
+   printf("(%%5.5d) ii = (%5.5d)\n", ii); // checks if ii is > 5, if less: pad with zeros on the left until 5 length
+   printf("(%%5.3d) ii = (%5.3d)\n", ii); // checks if ii is > 3, if less: pad with zeros on the left until 3 length
+   printf("(%%c)    ii = %c\n",      ii); // %c = character
+   printf("(%%x)    ii = %x\n",      ii); // %x = hexadecimal integer
+   printf("(%%#x)   ii = %#x\n",     ii); // %#x = hexadecimal integer with 0x prefix
+   printf("(%%X)    ii = %X\n",      ii); // %X = hexadecimal integer (uppercase)
+   printf("(%%#X)   ii = %#X\n",     ii); // %#X = hexadecimal integer (uppercase) with 0X prefix
+   printf("(%%o)    ii = %o\n",      ii); // %o = octal integer
+   printf("(%%#o)   ii = %#o\n",     ii); // %#o = octal integer with 0 prefix
 }
 

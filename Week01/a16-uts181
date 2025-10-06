@@ -16,10 +16,21 @@ INFO="../ZADMIN/zzz-generate-READ-THIS-FIRST.sh"
 echo "";
 [ -f $INFO ] && bash $INFO $0
 
-echo "START"
-for II in "SATU DUA TIGA"
-do echo $II ; done
-for II in SATU DUA TIGA
-do echo $II ; done
-echo "STOP"
+echo "Start iterating through a list of words"
 
+for II in "SATU DUA TIGA"; do # iterates as a single element
+   echo "Current element: $II";
+done
+
+echo "End of first iteration"
+echo ""
+echo "Start iterating through a list of words"
+
+for II in SATU DUA TIGA; do 
+    echo "Current element: $II"; 
+done
+
+# Conclusion: When using quotes, the entire string is treated as a single element.
+# Without quotes, the string is split into multiple elements based on spaces.
+echo "STOP"
+exit 0

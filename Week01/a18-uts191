@@ -15,12 +15,28 @@ echo "";
 [ -f $INFO ] && bash $INFO $0
 
 TIGA=3
-ANGKA="1 2 \$TIGA"
+ANGKA="1 2 \$TIGA" #\$TIGA is not expanded here because of the backslash (\)
 echo "START"
 echo "ANGKA"
 echo "$ANGKA"
-echo "$ANGKA" | gawk '/TIGA/ {print $1, $2}'
-echo "STOP"
 
+echo ""
+echo "gawk, try to find pattern /TIGA/"
+echo "$ANGKA" | gawk '/TIGA/ {print $1, $2}' # here we pipe ANGKA to gawk and search for TIGA; /TIGA/ is a pattern to search for
+echo ""
+
+echo "gawk, try to find pattern /3/"
+echo "$ANGKA" | gawk '/3/ {print $1, $2}' # here we pipe ANGKA to gawk and search for 3
+echo ""
+
+echo "gawk, try to find pattern /$TIGA/ using -v VAR=$TIGA"
+# -v is called "assign", assigns value of TIGA to gawk variable VAR
+# here we pipe ANGKA to gawk and search for variable TIGA; -v VAR=$TIGA is used to pass shell variable TIGA to gawk variable VAR
+echo "$ANGKA" | gawk -v VAR=$TIGA '$3 == VAR {print $1, $2}' 
+
+# here we pipe ANGKA to gawk and search for variable TIGA; -v VAR=$TIGA is used to pass shell variable TIGA to gawk variable VAR
+echo "$ANGKA" | gawk -v VAR=$TIGA '$3 != VAR {print $1, $2}' 
+
+echo "STOP"
 exit 0
 

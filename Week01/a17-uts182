@@ -21,4 +21,15 @@ echo "$VAR"
 KALIMAT="Keladi tidak sama dengan $VAR"
 echo "$KALIMAT"
 echo "$KALIMAT" | gawk '$5 ~ /s$/ {print $1}'
+echo "$KALIMAT" | gawk '$1 !~ /a$/ {print $2}' # should print "tidak"
 
+# we can override variables in bash using export command
+echo ""
+echo "==================================================="
+echo "Overriding variable VAR using export command"
+export VAR="keladi"
+echo "New VAR: $VAR"
+KALIMAT="Keladi tidak sama dengan $VAR"
+echo "New KALIMAT: $KALIMAT"
+echo "$KALIMAT" | gawk '$5 ~ /s$/ {print $1}' # should print "Keladi"
+echo "$KALIMAT" | gawk '$1 !~ /a$/ {print $2}' # should print nothing

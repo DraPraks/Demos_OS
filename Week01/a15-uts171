@@ -23,10 +23,11 @@ echo "";
 
 isADigit() {
    [[ $VARIABLE =~ $REGEX ]] || {
+      # the code block will run if [[ $VARIABLE =~ $REGEX ]] is FALSE
       TEXT1="VARIABLE $VARIABLE is not a digit."
       return
    }
-   [[ ${#VARIABLE} =~ $TEN ]] && {
+   [[ ${#VARIABLE} == 10 ]] && {
       TEXT1="VARIABLE $VARIABLE has 10 digits."
       return
    }
@@ -37,13 +38,77 @@ ONE='1'
 TEN='10'
 REGEX='^[0-9]+$'
 VARIABLE='1234567892'
+echo "VARIABLE is set to $VARIABLE"
+echo "Running sha1sum on VARIABLE"
 HASH=`echo "$VARIABLE" | sha1sum`
 echo        "$HASH"
+echo ""
+echo ""
+echo "Checking if VARIABLE is a digit and has 10 digits"
+echo "Calling function isADigit() on global variable VARIABLE=$VARIABLE"
 isADigit
+echo ""
+echo "We are going to extract first 3 characters from the sha1sum result"
+echo "Running code:"
+echo 'TEXT2=`echo "$HASH"  | cut -c1-3`'
+echo 'Piping HASH to cut command to extract first 3 characters...'
 TEXT2=`echo "$HASH"  | cut -c1-3`
+echo "Converting TEXT2 to uppercase using tr command"
+echo "Running code:"
+echo 'TEXT3=`echo "$TEXT2" | tr '[a-z]' '[A-Z]'`'
+echo "Piping TEXT2 to tr command to convert to uppercase..."
 TEXT3=`echo "$TEXT2" | tr '[a-z]' '[A-Z]'`
+echo ""
+echo "Results:"
 echo "$TEXT1"
 echo "$TEXT2"
 echo "$TEXT3"
-exit 0
 
+is10Digits() {
+   local input="$1"
+   if [[ $input =~ ^[0-9]{10}$ ]]; then
+      return 0 # Valid 10 digits
+   else
+      return 1 # Not valid 10 digits
+   fi
+}
+
+MAX_INPUTS=100
+valid_count=0
+
+# get inputs from user
+# [ $# -gt 0 ] checks if there are command-line arguments, -gt is "greater than"
+# inputs = ("$@") stores all command-line arguments into an array named inputs
+echo "Please enter up to $MAX_INPUTS inputs (one per line). Press Ctrl+D when done:"
+if [ $# -gt 0 ]; then
+   inputs=("$@")
+else
+   echo "Enter inputs (one per line, end with Ctrl+D):"
+   readarray -t inputs
+fi
+
+# New: Limit inputs for safety
+if [ ${#inputs[@]} -gt $MAX_INPUTS ]; then
+   echo "Too many inputs. Limiting to first $MAX_INPUTS inputs."
+   inputs=("${inputs[@]:0:$MAX_INPUTS}")
+fi
+
+# New: Loop through inputs
+for input in "${inputs[@]}"; do
+   if isADigit "$input"; then
+      ((valid_count++))
+      # Optional: Compute and print hash for valid inputs (as in original)
+      HASH=$(echo "$input" | sha1sum)
+      echo "$HASH"
+      TEXT2=$(echo "$HASH" | cut -c1-3)
+      TEXT3=$(echo "$TEXT2" | tr '[a-z]' '[A-Z]')
+      echo "Valid: $input -> $TEXT2 -> $TEXT3"
+   else
+      echo "Invalid: $input (not exactly 10 digits)"
+   fi
+done
+
+# New: Output the count
+echo "Total valid 10-digit inputs: $valid_count"
+
+exit 0
