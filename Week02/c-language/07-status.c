@@ -16,6 +16,7 @@
 
 void main(void) {
    printf("Process Identifier (PID) [%5.5d] -- Parent PID (PPID[%5.5d])\n", getpid(), getppid());
+   printf("Process location in memory: %p\n", (void*)main);
    sleep(1);
 }
 

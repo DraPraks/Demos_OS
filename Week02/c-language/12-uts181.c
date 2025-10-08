@@ -13,11 +13,11 @@
 #include <stdio.h>
 
 void main(void) {
-   char string[]="HALLO";
+   char string[]="HALLO"; // array of chars
    printf("START\n");
-   printf("%s\n",  string);
-   printf("%c\n", *string);
-   printf("%c\n",  string[1]);
+   printf("%s\n",  string); // prints entire array of chars
+   printf("%c\n", *string); // prints first char of array
+   printf("%c\n",  string[1]); // prints second char of array
    printf("STOP\n");
 }
 

@@ -19,11 +19,21 @@ int addone1 (int ii) {
 }
 
 int addone2 (int* iptr) {
+   // here we dereference the pointer to get the value, then increment the value
+   // finally we return the value
+   // the original variable will be changed because we are changing the value at the address of the pointer
+
+   // this is called pass by reference
    (*iptr)++;
    return *iptr;
 }
 
 int* addone3 (int* iptr) {
+   // here we dereference the pointer to get the value, then increment the value
+   // finally we return the pointer
+   // the original variable will be changed because we are changing the value at the address of the pointer
+
+   // difference from addone2 is that we return the pointer instead of the value
    (*iptr)++;
    return iptr;
 }

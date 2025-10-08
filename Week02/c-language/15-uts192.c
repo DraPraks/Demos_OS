@@ -17,7 +17,7 @@ int* function(int* bb) {
 void main (void) {
    int cc=aa++;
    printf("START\n");
-   printf("1. aa = %d\n", aa);
+   printf("1. aa = %d\n", aa); // %d is for integer
    printf("2. *function()=%d\n", *function(&cc));
    printf("3. cc = %d\n", ++cc);
    printf("STOP\n");

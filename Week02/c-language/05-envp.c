@@ -15,6 +15,7 @@
 #define MAXLENG 45
 
 void main(int argc, char *argv[], char **envp) {
+   // envp = environment pointer (array of strings)
    int ii;
    printf("=====================================================================\n");
    for (ii=0; (ii < MAXLOOP ) && (envp[ii] != NULL) ; ii++) {

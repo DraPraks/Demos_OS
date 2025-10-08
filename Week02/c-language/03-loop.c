@@ -21,8 +21,10 @@ void main(void) {
    printf(LINETXT);
    for (ii=0; ii<OLOOP; ii++) {
       printf(OLOOPTXT, ii);
+      printf("    finished loop OL[%d]\n", ii);
       for (jj=0; jj<ILOOP; jj++) {
          printf("    IL[%d]\n",jj);
+         printf("    finished loop IL[%d]\n", jj);
       }
    }
    printf(LINETXT);

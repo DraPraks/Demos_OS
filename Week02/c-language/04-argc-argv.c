@@ -31,6 +31,12 @@
 
 #include <stdio.h>
 void main(int argc, char *argv[]) {
+   // argc = argument count
+   // argv = argument vector (array of strings)
+   // argv[0] is the program name
+   // argv[1] is the first argument
+
+   // void main() can have 2 special params argc and argv
    printf("The value of argc    is %d\n", argc);
    printf("=============================================\n");
    for (int ii=0; ii < argc; ii++) {

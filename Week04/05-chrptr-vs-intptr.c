@@ -28,36 +28,36 @@ unsigned int*   ptrint0=&varint0;
 unsigned char*  ptrchr0=&varchr0;
 
 void main(void) {
-   printf("Address:     &ptrint0 = %#16.16lX\n",  &ptrint0);
-   printf("Value:        ptrint0 = %#16.16lX\n",   ptrint0);
-   printf("Address:     &varint0 = %#16.16lX\n",  &varint0);
+   printf("Address:     &ptrint0 = %#16.16lX\n",  (unsigned long)&ptrint0);
+   printf("Value:        ptrint0 = %#16.16lX\n",   (unsigned long)ptrint0);
+   printf("Address:     &varint0 = %#16.16lX\n",  (unsigned long)&varint0);
    printf("Pointer:     *ptrint0 = %#X\n", *ptrint0);
    printf("Hexadecimal:  varint0 = %#X\n", varint0);
    printf("Decimal:      varint0 = %d\n",  varint0);
    printf("Character:    varint0 = %c\n",  varint0);
    printf("\n");
-   printf("Address:     &ptrchr0 = %#16.16lX\n",  &ptrchr0);
-   printf("Value:        ptrchr0 = %#16.16lX\n",   ptrchr0);
-   printf("Address:     &varchr0 = %#16.16lX\n",  &varchr0);
+   printf("Address:     &ptrchr0 = %#16.16lX\n",  (unsigned long)&ptrchr0);
+   printf("Value:        ptrchr0 = %#16.16lX\n",   (unsigned long)ptrchr0);
+   printf("Address:     &varchr0 = %#16.16lX\n",  (unsigned long)&varchr0);
    printf("Pointer:     *ptrchr0 = %c\n", *ptrchr0);
    printf("Character:    varchr0 = %c\n",  varchr0);
    printf("Decimal:      varchr0 = %d\n",  varchr0);
    printf("Hexadecimal:  varchr0 = %#X\n", varchr0);
    printf("\n");
    printf("varchr1: Address = %#16.16lX -- Character = %c -- Decimal = %3d -- Hexa = %#X\n",
-          &varchr1, varchr1, varchr1, varchr1);
+          (unsigned long)&varchr1, varchr1, varchr1, varchr1);
    printf("varchr2: Address = %#16.16lX -- Character = %c -- Decimal = %3d -- Hexa = %#X\n",
-          &varchr2, varchr2, varchr2, varchr2);
+          (unsigned long)&varchr2, varchr2, varchr2, varchr2);
    printf("varchr3: Address = %#16.16lX -- Character = %c -- Decimal = %3d -- Hexa = %#X\n",
-          &varchr3, varchr3, varchr3, varchr3);
+          (unsigned long)&varchr3, varchr3, varchr3, varchr3);
    printf("varchr4: Address = %#16.16lX -- Character = %c -- Decimal = %3d -- Hexa = %#X\n",
-          &varchr4, varchr4, varchr4, varchr4);
+          (unsigned long)&varchr4, varchr4, varchr4, varchr4);
    printf("\n");
 
-   printf("Value:        ptrint0 = %#16.16lX\n",   ptrint0);
-   printf("Address:     &varchr1 = %#16.16lX\n",  &varchr1);
+   printf("Value:        ptrint0 = %#16.16lX\n",   (unsigned long)ptrint0);
+   printf("Address:     &varchr1 = %#16.16lX\n",  (unsigned long)&varchr1);
    printf("ptrint0=(int*)&varchr1; // =======\n"); ptrint0=(int*) &varchr1;
-   printf("Value:        ptrint0 = %#16.16lX\n",   ptrint0);
+   printf("Value:        ptrint0 = %#16.16lX\n",   (unsigned long)ptrint0);
    printf("\n");
 
    printf("Value:        varint0 = %#X\n", varint0);
@@ -68,10 +68,10 @@ void main(void) {
 
 // #define HEAD4 "!!! ptrchr0=(char*) &varint0; varchr0=*ptrchr0; !!!\n"
 
-   printf("Value:        ptrchr0 = %#16.16lX\n",   ptrchr0);
-   printf("Address:     &varint0 = %#16.16lX\n",  &varint0);
+   printf("Value:        ptrchr0 = %#16.16lX\n",   (unsigned long)ptrchr0);
+   printf("Address:     &varint0 = %#16.16lX\n",  (unsigned long)&varint0);
    printf("ptrchr0=(char*)&varint0;// =======\n"); ptrchr0=(char*) &varint0;
-   printf("Value:        ptrchr0 = %#16.16lX\n",   ptrchr0);
+   printf("Value:        ptrchr0 = %#16.16lX\n",   (unsigned long)ptrchr0);
    printf("\n");
 
    ptrchr0=(char*) &varint0; 

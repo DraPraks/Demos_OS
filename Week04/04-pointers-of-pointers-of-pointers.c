@@ -21,16 +21,16 @@ unsigned char** ptrptr0=&ptrchr0;
 unsigned char*** ppptr0=&ptrptr0;
 
 void main(void) {
-   printf("Address  &ppptr0 = %#16.16lX\n",   &ppptr0);
-   printf("Value     ppptr0 = %#16.16lX\n",    ppptr0);
-   printf("Address &ptrptr0 = %#16.16lX\n",  &ptrptr0);
-   printf("Pointer  *ppptr0 = %#16.16lX\n",   *ppptr0);
-   printf("Value    ptrptr0 = %#16.16lX\n",   ptrptr0);
-   printf("Address &ptrchr0 = %#16.16lX\n",  &ptrchr0);
-   printf("PtrPtr  **ppptr0 = %#16.16lX\n",  **ppptr0);
-   printf("Pointer *ptrptr0 = %#16.16lX\n",  *ptrptr0);
-   printf("Value    ptrchr0 = %#16.16lX\n",   ptrchr0);
-   printf("Address &varchr0 = %#16.16lX\n",  &varchr0);
+   printf("Address  &ppptr0 = %#16.16lX\n",   (unsigned long)&ppptr0);
+   printf("Value     ppptr0 = %#16.16lX\n",    (unsigned long)ppptr0);
+   printf("Address &ptrptr0 = %#16.16lX\n",  (unsigned long)&ptrptr0);
+   printf("Pointer  *ppptr0 = %#16.16lX\n",   (unsigned long)*ppptr0);
+   printf("Value    ptrptr0 = %#16.16lX\n",   (unsigned long)ptrptr0);
+   printf("Address &ptrchr0 = %#16.16lX\n",  (unsigned long)&ptrchr0);
+   printf("PtrPtr  **ppptr0 = %#16.16lX\n",  (unsigned long)**ppptr0);
+   printf("Pointer *ptrptr0 = %#16.16lX\n",  (unsigned long)*ptrptr0);
+   printf("Value    ptrchr0 = %#16.16lX\n",   (unsigned long)ptrchr0);
+   printf("Address &varchr0 = %#16.16lX\n",  (unsigned long)&varchr0);
    printf("PPPtr  ***ppptr0 = %18c\n",      ***ppptr0);
    printf("PtrPtr **ptrptr0 = %18c\n",      **ptrptr0);
    printf("Pointer *ptrchr0 = %18c\n",       *ptrchr0);

@@ -14,7 +14,10 @@
 # INFO: UTS 2018-1 (midterm)
 INFO="../ZADMIN/zzz-generate-READ-THIS-FIRST.sh"
 echo "";
-[ -f $INFO ] && bash $INFO $0
+[ -f $INFO ] && bash $INFO $0 # run $INFO and pass $0 (script name) as argument iff file exists
+
+# in bash, && means "if previous command succeeded, then run next command"
+# in bash, || means "if previous command failed, then run next command"
 
 echo "Start iterating through a list of words"
 

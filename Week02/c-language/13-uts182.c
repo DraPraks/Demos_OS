@@ -18,10 +18,11 @@ void main(void) {
    unsigned char  ch='b';
    unsigned char* st="dcba";
    printf("START\n");
-   printf(" ii    = %X or %c\n",   ii,  ii);
-   printf(" ch    = %X or %c\n",   ch,  ch);
-   printf("*st    = %X or %c\n",  *st, *st);
-   printf(" st[2] = %X or %c\n", st[2], st[2]);
+   printf(" ii    = %#X or %c\n",   ii,  ii);
+   printf(" ch    = %#X or %c\n",   ch,  ch);
+   printf("*st    = %#X or %c\n",  *st, *st);
+   printf(" st[2] = %#X or %c\n", st[2], st[2]);
+   // this will NOT work: printf("st = %#X or %s\n", st, st); --- ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘unsigned char *’
    printf("STOP\n");
 }
 

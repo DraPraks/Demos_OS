@@ -10,27 +10,46 @@
  */
 
 #include <stdio.h>
+#include <signal.h>
 
 void main (void) {
    char    cca='a';
-   printf ("Print   cca: %c\n", cca);
+   printf ("Print %%c  cca: %c\n", cca);
    char    ccb='b';
-   printf ("Print   ccb: %c\n", ccb);
+   printf ("Print %%c  ccb: %c\n", ccb);
    char*   ptr=&cca;
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
    ptr=&ccb;
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
    char    array[]="ABCDEF";
-   printf ("Print array: %s\n", array);
+   printf ("Print %%s  array: %s\n", array);
    ptr=array;
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
    ptr=&array[0];
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
    ptr=&array[1];
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
    ptr=ptr+1;
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
    ptr++;
-   printf ("Print  *ptr: %c\n", *ptr);
+   printf ("Print %%c  *ptr: %c\n", *ptr);
+
+   // infinite loop demonstration:
+   // while (1) {
+   //    printf ("Infinite loop: *ptr = %c\n", *ptr);
+   //    ptr++;
+   // }
+
+   // that will create segmentation fault after ptr goes beyond array boundary, core dumped means program crashed
+   // to force the program to continue printing outside of array bounds, we can code:
+
+   // UNCOMMENT IF YOU WANT TO IGNORE SEGMENTATION FAULT
+   
+   // signal(SIGSEGV, SIG_IGN); // ignore segmentation fault signal
+
+   // while (1) {
+   //    printf ("Infinite loop: *ptr = %c\n", *ptr);
+   //    ptr++;
+   // }
 }
 

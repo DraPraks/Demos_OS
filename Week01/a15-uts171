@@ -80,17 +80,18 @@ valid_count=0
 # [ $# -gt 0 ] checks if there are command-line arguments, -gt is "greater than"
 # inputs = ("$@") stores all command-line arguments into an array named inputs
 echo "Please enter up to $MAX_INPUTS inputs (one per line). Press Ctrl+D when done:"
-if [ $# -gt 0 ]; then
-   inputs=("$@")
-else
+if [ $# -gt 0 ]; then # -gt is "greater than"
+   inputs=("$@") # store all command-line arguments into an array named inputs
+else 
+   # if no command-line arguments, read from stdin
    echo "Enter inputs (one per line, end with Ctrl+D):"
-   readarray -t inputs
+   readarray -t inputs # -t removes trailing newlines
 fi
 
 # New: Limit inputs for safety
 if [ ${#inputs[@]} -gt $MAX_INPUTS ]; then
    echo "Too many inputs. Limiting to first $MAX_INPUTS inputs."
-   inputs=("${inputs[@]:0:$MAX_INPUTS}")
+   inputs=("${inputs[@]:0:$MAX_INPUTS}") # keep only first MAX_INPUTS elements
 fi
 
 # New: Loop through inputs
@@ -110,5 +111,20 @@ done
 
 # New: Output the count
 echo "Total valid 10-digit inputs: $valid_count"
+
+# Example array slicing in bash:
+echo ""
+echo "Example of array slicing in bash:"
+example_array=(zero one two three four five six seven eight nine ten)
+echo "Full array: ${example_array[@]}"
+
+echo ""
+echo "Slicing from index 3 to end: ${example_array[@]:3}"
+echo "Slicing from index 3, length 4: ${example_array[@]:3:4}"
+echo "Slicing from index 0, length 5: ${example_array[@]:0:5}"
+echo "Slicing from index 5 to end: ${example_array[@]:5}"
+echo "Slicing from index 5, length 10: ${example_array[@]:5:10}"
+echo "Slicing from index 10, length 5: ${example_array[@]:10:5}"
+echo "Slicing from index 11, length 5 (out of bounds): ${example_array[@]:11:5}"
 
 exit 0

@@ -39,3 +39,19 @@ void main (void) {
  * Line 27: menggambil local char terakhir yaitu b
  */
 
+ /*
+  Program flow:
+  1. main() called
+  2. localChar = 'c'
+  3. print localChar -> c
+  4. call getGlobal()
+    4.1 dereference globalChar -> 'a'
+    4.2 print globalChar -> a
+    4.3 change value at address of globalChar to 'b'
+    4.4 dereference charPTR -> 'b'
+    4.5 print charPTR -> b
+    4.6 return charPTR (address of globalChar)
+  5. dereference returned pointer (address of globalChar) and assign to localChar
+  6. print localChar -> b
+ */
+

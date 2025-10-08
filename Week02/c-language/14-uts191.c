@@ -16,7 +16,7 @@ void main (void) {
    unsigned char ch1='a', ch2='y', ch3='z';
    printf("START\n");
    printf("1) ch1 = %c or ASCII %#X\n", ch1, ch1);
-   ch1 = ch1 + ch3 - ch2;
+   ch1 = ch1 + ch3 - ch2; // ch1 = 'a' + 'z' - 'y' = 0x61 + 0x7A - 0x79 = 0x62 = 'b'
    printf("2) ch1 = %c or ASCII %#X\n", ch1, ch1);
    printf("STOP\n");
 }

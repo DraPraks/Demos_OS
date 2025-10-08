@@ -27,15 +27,29 @@ unsigned char varchr7='h';
 
 void main(void) {
    printf(HEAD1);
-   printf("varchr0  =  %#4X = %c   %#16.16lX\n", varchr0, varchr0, &varchr0);
-   printf("varchr1  =  %#4X = %c   %#16.16lX\n", varchr1, varchr1, &varchr1);
-   printf("varchr2  =  %#4X = %c   %#16.16lX\n", varchr2, varchr2, &varchr2);
-   printf("varchr3  =  %#4X = %c   %#16.16lX\n", varchr3, varchr3, &varchr3);
-   printf("varchr4  =  %#4X = %c   %#16.16lX\n", varchr4, varchr4, &varchr4);
-   printf("varchr5  =  %#4X = %c   %#16.16lX\n", varchr5, varchr5, &varchr5);
-   printf("varchr6  =  %#4X = %c   %#16.16lX\n", varchr6, varchr6, &varchr6);
-   printf("varchr7  =  %#4X = %c   %#16.16lX\n", varchr7, varchr7, &varchr7);
+
+   /*
+   - %#4X means print hex, minimum width 4, with 0X prefix
+   - %c means print as character
+   - %#16.16lX means print hex, minimum width 16, with 0X prefix, pad with leading zeros, long int
+     - Breaking it down:
+         - %#16 : minimum width 16, with 0X prefix
+         - .16  : pad with leading zeros to make it 16 characters wide
+         - l    : long int
+         - X    : print as hexadecimal
+   */
+
+   printf("varchr0  =  %#4X = %c   %#16.16lX\n", varchr0, varchr0, (unsigned long)&varchr0);
+   printf("varchr1  =  %#4X = %c   %#16.16lX\n", varchr1, varchr1, (unsigned long)&varchr1);
+   printf("varchr2  =  %#4X = %c   %#16.16lX\n", varchr2, varchr2, (unsigned long)&varchr2);
+   printf("varchr3  =  %#4X = %c   %#16.16lX\n", varchr3, varchr3, (unsigned long)&varchr3);
+   printf("varchr4  =  %#4X = %c   %#16.16lX\n", varchr4, varchr4, (unsigned long)&varchr4);
+   printf("varchr5  =  %#4X = %c   %#16.16lX\n", varchr5, varchr5, (unsigned long)&varchr5);
+   printf("varchr6  =  %#4X = %c   %#16.16lX\n", varchr6, varchr6, (unsigned long)&varchr6);
+   printf("varchr7  =  %#4X = %c   %#16.16lX\n", varchr7, varchr7, (unsigned long)&varchr7);
 }
+
+// example: %#4.4X means print hex, minimum width 4, with 0X prefix, pad with leading zeros
 
 /*
 VARIABLE + VALUE +CHR+ ++++ ADDRESS  ++++

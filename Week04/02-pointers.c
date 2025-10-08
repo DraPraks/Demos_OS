@@ -19,36 +19,40 @@ unsigned char  varchr0='a';
 unsigned char  varchr1='b';
 unsigned char  varchr2='c';
 unsigned char  varchr3='d';
-unsigned char* ptrchr0=&varchr0;
+unsigned char* ptrchr0=&varchr0; // ptrchr0 is a ptr to varchr0
 unsigned char* ptrchr1=&varchr1;
 unsigned char* ptrchr2=&varchr2;
 unsigned char* ptrchr3=&varchr3;
 
 void main(void) {
-   printf("Address &ptrchr0 = %#16.16lX\n",  &ptrchr0);
-   printf("Value    ptrchr0 = %#16.16lX\n",   ptrchr0);
-   printf("Address &varchr0 = %#16.16lX\n",  &varchr0);
-   printf("Pointer *ptrchr0 = %18c\n",       *ptrchr0);
+   printf("Address &ptrchr0 = %#16.16lX\n",  (unsigned long)&ptrchr0);
+   printf("Value    ptrchr0 = %#16.16lX\n",   (unsigned long)ptrchr0);
+   printf("Address &varchr0 = %#16.16lX\n",  (unsigned long)&varchr0);
+   printf("Pointer *ptrchr0 = %18c\n",       *ptrchr0); // dereference pointer to get value
    printf("Value    varchr0 = %18c\n\n",      varchr0);
 
-   printf("Address &ptrchr1 = %#16.16lX\n",  &ptrchr1);
-   printf("Value    ptrchr1 = %#16.16lX\n",   ptrchr1);
-   printf("Address &varchr1 = %#16.16lX\n",  &varchr1);
+   printf("Address &ptrchr1 = %#16.16lX\n",  (unsigned long)&ptrchr1);
+   printf("Value    ptrchr1 = %#16.16lX\n",   (unsigned long)ptrchr1);
+   printf("Address &varchr1 = %#16.16lX\n",  (unsigned long)&varchr1);
    printf("Pointer *ptrchr1 = %18c\n",       *ptrchr1);
    printf("Value    varchr1 = %18c\n\n",      varchr1);
 
-   printf("Address &ptrchr2 = %#16.16lX\n",  &ptrchr2);
-   printf("Value    ptrchr2 = %#16.16lX\n",   ptrchr2);
-   printf("Address &varchr2 = %#16.16lX\n",  &varchr2);
+   printf("Address &ptrchr2 = %#16.16lX\n",  (unsigned long)&ptrchr2);
+   printf("Value    ptrchr2 = %#16.16lX\n",   (unsigned long)ptrchr2);
+   printf("Address &varchr2 = %#16.16lX\n",  (unsigned long)&varchr2);
    printf("Pointer *ptrchr2 = %18c\n",       *ptrchr2);
    printf("Value    varchr2 = %18c\n\n",      varchr2);
 
-   printf("Address &ptrchr3 = %#16.16lX\n",  &ptrchr3);
-   printf("Value    ptrchr3 = %#16.16lX\n",   ptrchr3);
-   printf("Address &varchr3 = %#16.16lX\n",  &varchr3);
+   printf("Address &ptrchr3 = %#16.16lX\n",  (unsigned long)&ptrchr3);
+   printf("Value    ptrchr3 = %#16.16lX\n",   (unsigned long)ptrchr3);
+   printf("Address &varchr3 = %#16.16lX\n",  (unsigned long)&varchr3);
    printf("Pointer *ptrchr3 = %18c\n",       *ptrchr3);
    printf("Value    varchr3 = %18c\n\n",      varchr3);
 }
+
+/*
+In general pointers are stored in an address, their value points to another memory address of the object they're pointing to.
+*/
 
 /*
 Address &ptrchr0 = 0X0000556677889938
