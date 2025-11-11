@@ -51,6 +51,13 @@ Execution:
 2. Add the 0X prefix (due to # flag).
 3. Pad the entire output (including prefix) to at least 16 characters with spaces on the left (default right-align).
 
+NOTE: padding to width occurs before adding the prefix, after applying precision.
+padding to precision (with leading zeros) occurs before adding the prefix.
+so execution order is:
+- Apply precision (leading zeros to meet digit count)
+- Add prefix (0X)
+- Apply width (spaces to meet total character count)
+
 Generalized Execution Flow for printf Format Specifiers:
 1. **Argument Conversion**: Interpret the argument based on length modifier (e.g., l for long) and type (e.g., X for hex). Convert to the base string representation (e.g., decimal, hex digits).
 2. **Precision Application**: 
@@ -61,6 +68,4 @@ Generalized Execution Flow for printf Format Specifiers:
 3. **Flag Application**: Apply flags in order (e.g., # adds prefixes like 0x/0X, + adds signs, 0 changes padding to zeros).
 4. **Width Application**: Ensure the output is at least the specified width. Pad with spaces (or zeros if 0 flag) on left (right-align) or right (if - flag for left-align). Width includes prefixes/signs added by flags.
 5. **Output**: Print the final formatted string.
-
-This flow ensures precision modifies the core value first, then flags add decorations, and width handles alignment/layout.
 */

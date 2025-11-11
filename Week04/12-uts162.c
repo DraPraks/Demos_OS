@@ -26,7 +26,7 @@ void main(void) {
    printf("%p\n", &ptrchr);
    printeq(LINES);
    ptrchr = (char*) &ptrchr;
-   for (ii=0; ii<6; ii++) {
+   for (ii=0; ii<50; ii++) {
       printf("%X ", *ptrchr);
       ptrchr++;
    }

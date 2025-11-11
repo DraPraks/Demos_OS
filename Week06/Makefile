@@ -32,7 +32,10 @@ P13=13-uas161
 P14=14-uas162
 P15=15-uas171
 P16=16-uas172
-
+P17=A-practice
+P18=B-practice
+P19=C-practice
+P20=D-practice
 
 EXECS= \
 	$(P00)  \
@@ -56,7 +59,10 @@ EXECS= \
 	$(P14)  \
 	$(P15)  \
 	$(P16)  \
-
+	$(P17)  \
+	$(P18)  \
+	$(P19)  \
+	$(P20)  \
 
 all:	$(EXECS)
 

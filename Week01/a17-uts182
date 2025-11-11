@@ -33,3 +33,17 @@ KALIMAT="Keladi tidak sama dengan $VAR"
 echo "New KALIMAT: $KALIMAT"
 echo "$KALIMAT" | gawk '$5 ~ /s$/ {print $1}' # should print "Keladi"
 echo "$KALIMAT" | gawk '$1 !~ /a$/ {print $2}' # should print nothing
+
+# gawk has the format 'gawk condition /pattern/ { action }' i.e., 
+
+NEWVAR="ORANGE"
+echo ""
+echo "==================================================="
+echo "Demonstrating variable substitution in gawk"
+echo "Setting NEWVAR to $NEWVAR"
+echo "Running gawk command to match NEWVAR"
+echo "apple orange banana" | gawk -v VAR="$NEWVAR" '$2 ~ VAR {print $2}' # should print "orange"
+echo "apple banana grape"  | gawk -v VAR="$NEWVAR" '$2 ~ VAR {print $2}' # should print nothing
+
+NEWVAR2="TEST 2"
+echo "$NEWVAR2" | gawk '$1 ~ /TEST/ {print $2}' # should print "2"

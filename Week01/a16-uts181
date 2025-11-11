@@ -33,6 +33,10 @@ for II in SATU DUA TIGA; do
     echo "Current element: $II"; 
 done
 
+for II in "TIGA" "DUA" "SATU"; do 
+    echo "Current element: $II"; 
+done
+
 # Conclusion: When using quotes, the entire string is treated as a single element.
 # Without quotes, the string is split into multiple elements based on spaces.
 echo "STOP"

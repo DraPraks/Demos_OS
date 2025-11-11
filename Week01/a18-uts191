@@ -37,6 +37,13 @@ echo "$ANGKA" | gawk -v VAR=$TIGA '$3 == VAR {print $1, $2}'
 # here we pipe ANGKA to gawk and search for variable TIGA; -v VAR=$TIGA is used to pass shell variable TIGA to gawk variable VAR
 echo "$ANGKA" | gawk -v VAR=$TIGA '$3 != VAR {print $1, $2}' 
 
+TEST="TEST"
+TEST2="This sentence is a TEST string."
+
+echo "gawk, try to find pattern /TEST/"
+echo "$TEST2" | gawk -v VAR=$TEST '$5 == VAR {print $0}' # should print the entire line
 echo "STOP"
 exit 0
 
+ 
+ 

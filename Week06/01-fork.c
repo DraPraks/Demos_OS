@@ -19,13 +19,22 @@ void main(void) {
    char* iAM="PARENT";
   
    printf("PID[%d] PPID[%d] (START:%s)\n", getpid(), getppid(), iAM);
-   if (fork() > 0) {
-      sleep(1);     /* LOOK THIS ************** */
+   // ↑ This prints ONCE (only the parent executes this before fork)
+   
+   if (fork() > 0) {    // ← FORK HAPPENS HERE!
+                        //   Parent gets child's PID (e.g., 1235 > 0) → takes this branch
+                        //   Child gets 0 (0 is NOT > 0) → skips this branch
+      // === PARENT ONLY ===
+   sleep(1);
       printf("PID[%d] PPID[%d] (IFF0:%s)\n", getpid(), getppid(), iAM);
+      
    } else {
+      // === CHILD ONLY ===
       iAM="CHILD";
       printf("PID[%d] PPID[%d] (ELSE:%s)\n", getpid(), getppid(), iAM);
    }
+   
+   // Both processes execute this:
    printf("PID[%d] PPID[%d] (STOP:%s)\n", getpid(), getppid(), iAM);
 }
 

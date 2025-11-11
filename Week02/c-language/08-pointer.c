@@ -14,7 +14,7 @@
 
 void main (void) {
    char    cca='a';
-   printf ("Print %%c  cca: %c\n", cca);
+   printf ("Print %%c  cca: %c\n", cca); // %c is for character
    char    ccb='b';
    printf ("Print %%c  ccb: %c\n", ccb);
    char*   ptr=&cca;
@@ -22,7 +22,7 @@ void main (void) {
    ptr=&ccb;
    printf ("Print %%c  *ptr: %c\n", *ptr);
    char    array[]="ABCDEF";
-   printf ("Print %%s  array: %s\n", array);
+   printf ("Print %%s  array: %s\n", array); // %s is for string
    ptr=array;
    printf ("Print %%c  *ptr: %c\n", *ptr);
    ptr=&array[0];

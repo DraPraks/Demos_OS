@@ -17,23 +17,23 @@
 
 void main(void) {
    /* Local Variables in Stack Segment */
-   unsigned char varchr0='a';
-   unsigned char varchr1='b';
+   unsigned char varchr0='a';  // Declare and initialize an unsigned char variable with 'a'
+   unsigned char varchr1='b';  // Each variable holds a single character
    unsigned char varchr2='c';
    unsigned char varchr3='d';
    unsigned char varchr4='e';
    unsigned char varchr5='f';
    unsigned char varchr6='g';
-   unsigned char varchr7='h';
-   printf(HEAD1);
-   printf("varchr0  =  %#4X = %c   %#16.16lX\n", varchr0, varchr0, (unsigned long)&varchr0);
+   unsigned char varchr7='h';  // Variables are stored on the stack in reverse order (higher addresses first)
+   printf(HEAD1);  // Print the header string defined in the macro
+   printf("varchr0  =  %#4X = %c   %#16.16lX\n", varchr0, varchr0, (unsigned long)&varchr0);  // Print value in hex, as char, and address
    printf("varchr1  =  %#4X = %c   %#16.16lX\n", varchr1, varchr1, (unsigned long)&varchr1);
    printf("varchr2  =  %#4X = %c   %#16.16lX\n", varchr2, varchr2, (unsigned long)&varchr2);
    printf("varchr3  =  %#4X = %c   %#16.16lX\n", varchr3, varchr3, (unsigned long)&varchr3);
    printf("varchr4  =  %#4X = %c   %#16.16lX\n", varchr4, varchr4, (unsigned long)&varchr4);
    printf("varchr5  =  %#4X = %c   %#16.16lX\n", varchr5, varchr5, (unsigned long)&varchr5);
    printf("varchr6  =  %#4X = %c   %#16.16lX\n", varchr6, varchr6, (unsigned long)&varchr6);
-   printf("varchr7  =  %#4X = %c   %#16.16lX\n", varchr7, varchr7, (unsigned long)&varchr7);
+   printf("varchr7  =  %#4X = %c   %#16.16lX\n", varchr7, varchr7, (unsigned long)&varchr7);  // Addresses decrease by 1 byte each, showing stack growth
 }
 
 /*

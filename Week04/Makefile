@@ -32,6 +32,7 @@ P18=18-uts192
 P19=19-uts201
 P20=20-uts222
 P21=21-uts232
+P22=midterm-problem1
 
 
 EXECS= \
@@ -57,6 +58,7 @@ EXECS= \
         $(P19) \
         $(P20) \
         $(P21) \
+        $(P22) \
 
 
 DEMOFILES=\

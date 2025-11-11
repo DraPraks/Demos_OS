@@ -34,12 +34,12 @@ void main(void) {
    }
    printf("The ADDRESS of pt1_char is %p, terminal is %p\n", &pt1_char, &terminal);
    pt1_char = (char *) &int0;
-   printf("*pt1_char   =%c\n",  *pt1_char);
-   printf(" pt1_char[5]=%c\n", pt1_char[5]);
+   printf("*pt1_char   =%X\n",  *pt1_char);
+   printf(" pt1_char[5]=%X\n", pt1_char[5]);
    printf(" pt1_char   =%s\n",   pt1_char);
    pt1_char=&terminal;
    printf("*pt1_char=%2.2X (%p)\n", *pt1_char, pt1_char);
-   pt1_char--;
+   pt1_char++;
    printf("*pt1_char=%2.2X (%p)\n", *pt1_char, pt1_char);
    pt1_char--;
    printf("*pt1_char=%2.2X (%p)\n", *pt1_char, pt1_char);

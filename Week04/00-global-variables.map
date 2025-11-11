@@ -4,7 +4,7 @@ Merging program properties
 
 As-needed library included to satisfy reference by file (symbol)
 
-libc.so.6                     /tmp/ccPTQpnt.o (puts@@GLIBC_2.2.5)
+libc.so.6                     /tmp/cc9j5a5f.o (puts@@GLIBC_2.2.5)
 
 Discarded input sections
 
@@ -19,9 +19,9 @@ Discarded input sections
  .note.gnu.property
                 0x0000000000000000       0x20 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
  .note.GNU-stack
-                0x0000000000000000        0x0 /tmp/ccPTQpnt.o
+                0x0000000000000000        0x0 /tmp/cc9j5a5f.o
  .note.gnu.property
-                0x0000000000000000       0x20 /tmp/ccPTQpnt.o
+                0x0000000000000000       0x20 /tmp/cc9j5a5f.o
  .note.GNU-stack
                 0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o
  .note.gnu.property
@@ -41,7 +41,7 @@ Linker script and memory map
 LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o
 LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o
 LOAD /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
-LOAD /tmp/ccPTQpnt.o
+LOAD /tmp/cc9j5a5f.o
 LOAD /usr/lib/gcc/x86_64-linux-gnu/13/libgcc.a
 LOAD /usr/lib/gcc/x86_64-linux-gnu/13/libgcc_s.so
 START GROUP
@@ -183,7 +183,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
  .text          0x00000000000010a6        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o
  *fill*         0x00000000000010a6        0xa 
  .text          0x00000000000010b0       0xb9 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
- .text          0x0000000000001169      0x1a2 /tmp/ccPTQpnt.o
+ .text          0x0000000000001169      0x1a2 /tmp/cc9j5a5f.o
                 0x0000000000001169                main
  .text          0x000000000000130b        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o
  .text          0x000000000000130b        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
@@ -205,7 +205,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
  .rodata.cst4   0x0000000000002000        0x4 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o
                 0x0000000000002000                _IO_stdin_used
  *fill*         0x0000000000002004        0x4 
- .rodata        0x0000000000002008      0x16b /tmp/ccPTQpnt.o
+ .rodata        0x0000000000002008      0x16b /tmp/cc9j5a5f.o
 
 .rodata1
  *(.rodata1)
@@ -227,7 +227,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
                                          0x30 (size before relaxing)
  .eh_frame      0x0000000000002218       0x18 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o
                                          0x30 (size before relaxing)
- .eh_frame      0x0000000000002230       0x20 /tmp/ccPTQpnt.o
+ .eh_frame      0x0000000000002230       0x20 /tmp/cc9j5a5f.o
                                          0x38 (size before relaxing)
  .eh_frame      0x0000000000002250        0x4 /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o
  *(.eh_frame.*)
@@ -340,7 +340,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
  .data.rel.local
                 0x0000000000004008        0x8 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
                 0x0000000000004008                __dso_handle
- .data          0x0000000000004010        0x8 /tmp/ccPTQpnt.o
+ .data          0x0000000000004010        0x8 /tmp/cc9j5a5f.o
                 0x0000000000004010                varchr0
                 0x0000000000004011                varchr1
                 0x0000000000004012                varchr2
@@ -373,7 +373,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
  .bss           0x0000000000004018        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o
  .bss           0x0000000000004018        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o
  .bss           0x0000000000004018        0x1 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
- .bss           0x0000000000004019        0x0 /tmp/ccPTQpnt.o
+ .bss           0x0000000000004019        0x0 /tmp/cc9j5a5f.o
  .bss           0x0000000000004019        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o
  .bss           0x0000000000004019        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
  *(COMMON)
@@ -420,7 +420,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
  *(.comment)
  .comment       0x0000000000000000       0x2b /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
                                          0x2c (size before relaxing)
- .comment       0x000000000000002b       0x2c /tmp/ccPTQpnt.o
+ .comment       0x000000000000002b       0x2c /tmp/cc9j5a5f.o
  .comment       0x000000000000002b       0x2c /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o
 
 .gnu.build.attributes
