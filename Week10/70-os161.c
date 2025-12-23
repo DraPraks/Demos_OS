@@ -1,37 +1,78 @@
-/*
- * Copyright (C) 2015-2023 BinKadal, Sdn. Bhd.
- * This program is free script/software. This program is distributed in the 
- * hope that it will be useful, but WITHOUT ANY WARRANTY; without even the 
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
- * REV08: Sat 28 Oct 2023 13:00
- * REV07: Wed 25 Mar 2020 16:00
- * REV06: Tue 26 Nov 2019 11:00
- * REV02: Fri 18 May 2018 13:00
- * REV01: Sun 05 Jun 2016 00:00
- * START: Thu 01 Jan 2015 00:00
-
-# INFO: UAS 2016-1 (final term)
-# INFO:                   To run:   ./70-161
-
- */
-
 #include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include <math.h>
 
-#define FILE "70-os161-demo.txt"
+typedef struct {
+    int pid;            // Process ID
+    int arrival_time;   // Arrival Time
+    int burst_time;     // CPU Burst Time
+    int remaining_time; // For SRT/RR (starts equal to burst_time)
+    int completion_time;// Time process finishes
+    int waiting_time;   // Metrics
+    int turnaround_time;// Metrics
+    int is_completed;   // Flag for SJF/SRT
+} Process;
 
-char *string = "ABCD\n";
-void main(void) {
-   int fileDescriptor;
-   printf("See also file %s\n", FILE);
-   close(STDOUT_FILENO);
-   fileDescriptor = open (FILE, O_RDWR|O_CREAT|O_TRUNC, 0644);
-   printf ( "%s", string);
-   write(fileDescriptor, string, strlen(string));
+void calculate_FCFS(Process processes[], int n) {
+   int curr_time = 0;
+
+   for (int i = 0; i < n; i++) {
+       if (curr_time < processes[i].arrival_time) {
+           curr_time = processes[i].arrival_time;
+       }
+       
+       // execute process 
+       curr_time += process[i].burst_time;
+
+       // record metrics
+       process[i].completion_time = curr_time;
+       process[i].turnaround_time = process[i].completion_time - process[i].arrival_time;
+       process[i].waiting_time = process[i].turnaround_time - process[i].burst_time;
+   }
 }
 
+void calculate_SJF(Process processes[], int n) {
+   int curr_time = 0;
+   int completed = 0;
+
+   while (completed != n) {
+      int idx = -1;  
+      int min_burst = HUGE_VAL;
+
+      // selection logic
+      for (int i = 0; i < n; i++) {
+         if ()
+      }
+   }
+}
+
+int main(void) {
+   int choice;
+   printf("enter which algorithm to simulate: \n");
+   printf("1. FCFS\n2. SJF\n3. SRT\n4. RR\n");
+
+   scanf("%d", &choice);
+
+   // Sample processes (assuming sorted by arrival time for FCFS)
+   Process processes[] = {
+       {1, 0, 5},
+       {2, 1, 3},
+       {3, 2, 8}
+   };
+   int n = 3;
+
+   switch (choice) {
+       case 1:
+           calculate_FCFS(processes, n);
+           // Print results
+           printf("PID\tArrival\tBurst\tCompletion\tWaiting\tTurnaround\n");
+           for (int i = 0; i < n; i++) {
+               printf("%d\t%d\t%d\t%d\t\t%d\t%d\n", processes[i].pid, processes[i].arrival_time, processes[i].burst_time, processes[i].completion_time, processes[i].waiting_time, processes[i].turnaround_time);
+           }
+           break;
+       default:
+           printf("Invalid choice\n");
+           break;
+   }
+
+   return 0;
+}
